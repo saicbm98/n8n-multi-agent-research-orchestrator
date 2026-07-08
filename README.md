@@ -7,6 +7,10 @@ The exported workflow definition lives in
 [`multi-agent-research-orchestrator.json`](./multi-agent-research-orchestrator.json)
 and can be imported directly into any n8n instance.
 
+## Architecture
+
+![Workflow architecture](architecture.png)
+
 ## What it does
 
 For each topic in a configurable list, the workflow orchestrates two cooperating agents:
