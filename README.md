@@ -15,10 +15,10 @@ and can be imported directly into any n8n instance.
 
 For each topic in a configurable list, the workflow orchestrates two cooperating agents:
 
-1. **Agent 1 — Research (NewsAPI):** queries the [NewsAPI](https://newsapi.org)
+1. **Agent 1 - Research (NewsAPI):** queries the [NewsAPI](https://newsapi.org)
    `/v2/everything` endpoint for the three most recent English-language articles on
    the topic (sorted by publish date).
-2. **Agent 2 — Summary (OpenAI):** takes those headlines, builds a prompt, and calls
+2. **Agent 2 - Summary (OpenAI):** takes those headlines, builds a prompt, and calls
    OpenAI's Chat Completions API (`gpt-4o-mini`) to condense them into a concise
    two-sentence plain-English summary of what is happening in that topic area right now.
 
@@ -48,13 +48,13 @@ loop completes, all topic results are merged and composed into one email.
 
 ## What it demonstrates
 
-- **Multi-agent orchestration** — two distinct, single-responsibility agents (a research
+- **Multi-agent orchestration** - two distinct, single-responsibility agents (a research
   agent and a summarisation agent) chained so the output of one becomes the input of the next.
-- **Batch processing** — a Split-In-Batches loop that applies the same pipeline
+- **Batch processing** - a Split-In-Batches loop that applies the same pipeline
   independently to each item in a topic list and re-aggregates the results.
-- **API integration** — HTTP Request nodes integrating two external REST APIs (NewsAPI
+- **API integration** - HTTP Request nodes integrating two external REST APIs (NewsAPI
   and OpenAI) plus Gmail for delivery.
-- **Structured data transformation** — Code and Set nodes that shape API responses,
+- **Structured data transformation** - Code and Set nodes that shape API responses,
   build prompts, normalise fields, and render aggregated data into a formatted HTML digest.
 
 ## Credentials & security
@@ -63,9 +63,9 @@ loop completes, all topic results are merged and composed into one email.
 n8n's built-in **credential store** (referenced by credential ID), using generic
 credential types:
 
-- **Agent 2 — Summary (OpenAI):** `httpHeaderAuth` credential supplying the
+- **Agent 2 - Summary (OpenAI):** `httpHeaderAuth` credential supplying the
   `Authorization: Bearer …` header.
-- **Agent 1 — Research (NewsAPI):** `httpQueryAuth` credential supplying the `apiKey`
+- **Agent 1 - Research (NewsAPI):** `httpQueryAuth` credential supplying the `apiKey`
   query parameter.
 
 To run this workflow in your own n8n instance, create those two credentials and attach
